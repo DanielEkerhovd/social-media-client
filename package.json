@@ -7,7 +7,9 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node dummy.js",
-    "format": "prettier --write src/js/*.js src/scss/*.scss"
+    "format": "prettier --write src/js/*.js src/scss/*.scss",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint --fix src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
