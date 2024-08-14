@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test",
   "main": "index.js",
   "scripts": {
@@ -28,14 +28,14 @@
   },
   "lint-staged": {
     "*.js": [
-    "prettier --write",
-    "eslint --fix"
-  ],
-  "*.html": [
-    "prettier --write"
-  ],
-  "*.scss": [
-    "prettier --write"
-  ]
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
