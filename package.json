@@ -7,7 +7,7 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node dummy.js",
-    "format": "prettier --write src/js/*.js src/scss/*.scss *.js"
+    "format": "prettier --write src/js/*.js src/scss/*.scss"
   },
   "keywords": [],
   "author": "Noroff",
