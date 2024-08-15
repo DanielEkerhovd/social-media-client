@@ -1,2 +1,8 @@
 /node_modules
 /dist
+
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress.json.*
+cypress.env.json.*
