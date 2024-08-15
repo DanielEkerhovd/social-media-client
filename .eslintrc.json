@@ -1,31 +1,42 @@
 {
-    "env": {
-      "browser": true,
-      "es2021": true
-    },
-    "extends": "eslint:recommended",
-    "overrides": [
-      {
-        "files": ["**/*.cy.js"],
-        "env": { "cypress/globals": true },
-        "plugins": ["cypress"],
-        "extends": ["plugin:cypress/recommended"],
-        "rules": {
-          "cypress/no-unnecessary-waiting": "off",
-          "no-unused-vars": "off"
-        }
-      },
-      {
-        "files": ["**/*.test.js"],
-        "env": { "jest": true },
-        "plugins": ["jest"],
-        "extends": ["plugin:jest/recommended"],
-        "rules": { "jest/prefer-expect-assertions": "off" }
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-undef": "error",
+    "no-unused-vars": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["cypress.config.js"],
+      "env": { "node": true },
+      "rules": {
+        "no-undef": "off",
+        "no-unused-vars": "off"
       }
-    ],
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
     },
-    "rules": {}
+    {
+      "files": ["**/*.cy.js"],
+      "env": { "cypress/globals": true },
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"],
+      "rules": {
+        "cypress/no-unnecessary-waiting": "off",
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   }
+}

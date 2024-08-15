@@ -18,13 +18,30 @@ export default [...compat.extends("eslint:recommended"), {
     languageOptions: {
         globals: {
             ...globals.browser,
+            ...globals.node,
         },
 
         ecmaVersion: "latest",
         sourceType: "module",
     },
 
-    rules: {},
+    rules: {
+        "no-undef": "error",
+        "no-unused-vars": "warn",
+    },
+}, {
+    files: ["**/cypress.config.js"],
+
+    languageOptions: {
+        globals: {
+            ...globals.node,
+        },
+    },
+
+    rules: {
+        "no-undef": "off",
+        "no-unused-vars": "off",
+    },
 }, ...compat.extends("plugin:cypress/recommended").map(config => ({
     ...config,
     files: ["**/*.cy.js"],
