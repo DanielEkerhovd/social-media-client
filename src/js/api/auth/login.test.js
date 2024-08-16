@@ -21,7 +21,7 @@ global.fetch = jest.fn(() =>
   })
 );
 
-describe("login", () => {
+describe("login function", () => {
   it("should store a token when provided with valid credentials", async () => {
     const email = "dummyEmail@noroff.no";
     const password = "dummyPassword";
