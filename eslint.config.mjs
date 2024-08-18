@@ -23,7 +23,6 @@ export default [...compat.extends(
         globals: {
             ...globals.browser,
             ...globals.node,
-            ...globals.jest,
             ...cypress.environments.globals.globals,
         },
 
