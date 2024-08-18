@@ -14,15 +14,34 @@ A project about testing using different tools:
 ## How to install
 
 1. Clone the workflow branch
-2. ```bash
+2. Install in terminal (requires npm)
+```bash
 npm install
-3. ```bash
-npm install
+```
+3. Run build
+```bash
+npm build
+```
 
 ## How to test
 
 ```bash
-npm test:unit
+npm run test
+```
 
+To run test individually, use: 
+
+E2E
 ```bash
-npm test:E2E
+npm run test:E2E
+```
+
+Unit test
+```bash
+npm run test:unit
+```
+
+## Automatic testing
+
+When you create a pull request, the github actions run and tests both Unit and E2E automaticly
+
