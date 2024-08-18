@@ -2,6 +2,9 @@ import { apiPath } from "../../../src/js/api/constants.js";
 
 describe("Invalid login test", () => {
   it("should not login the user with the login form using invalid credentials, and show a message", () => {
+
+    cy.removeToken();
+
     cy.visit("/", { timeout: 30000 });
     cy.wait(500);
     cy.get('button[data-auth="login"]').last().click();

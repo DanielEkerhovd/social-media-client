@@ -66,6 +66,7 @@ export default [...compat.extends(
 
     rules: {
         "cypress/no-unnecessary-waiting": "off",
+        "jest/valid-expect": "off",
         "no-unused-vars": "off",
     },
 }, ...compat.extends("plugin:jest/recommended").map(config => ({
