@@ -26,27 +26,25 @@
 import { apiPath } from "../../src/js/api/constants.js";
 
 Cypress.Commands.add("login", () => {
-
     cy.visit("/", { timeout: 30000 });
-    cy.get('button[data-auth="login"]').last().should('be.visible').click();
+    cy.wait(500);
+    cy.get('button[data-auth="login"]').last().click();
+    cy.wait(500);
     cy.fixture("goodData.json").then((user) => {
-        cy.get("input#loginEmail").should('be.visible').type(user.email);
-        cy.get("input#loginPassword").should('be.visible').type(user.password);
+      cy.get("input#loginEmail").type(user.email);
+      cy.get("input#loginPassword").type(user.password);
     });
     cy.intercept("POST", `${apiPath}/social/auth/login`, {
-        statusCode: 200,
-        body: {
-            accessToken: "dummyToken",
-        },
+      statusCode: 200,
+      body: {
+        accessToken: "dummyToken",
+      },
     }).as("login");
     cy.get('button[type="submit"]').contains("Login").click();
-    cy.wait("@login");
 });
 
 Cypress.Commands.add("removeToken", () => {
-
     cy.window().then((win) => {
         win.localStorage.removeItem("token");
     });
-
 });

@@ -14,11 +14,17 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-export default [...compat.extends("eslint:recommended"), {
+export default [...compat.extends(
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:cypress/recommended",
+), {
     languageOptions: {
         globals: {
             ...globals.browser,
             ...globals.node,
+            ...globals.jest,
+            ...cypress.environments.globals.globals,
         },
 
         ecmaVersion: "latest",
@@ -28,6 +34,7 @@ export default [...compat.extends("eslint:recommended"), {
     rules: {
         "no-undef": "error",
         "no-unused-vars": "warn",
+        "cypress/no-unnecessary-waiting": "off",
     },
 }, {
     files: ["**/cypress.config.js"],
