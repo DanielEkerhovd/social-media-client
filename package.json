@@ -4,7 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write src/js/*.js src/scss/*.scss",
+    "format": "prettier --write src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint --fix src/**/*.js",
     "test": "npm run test:unit && npm run test:e2e",
