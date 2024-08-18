@@ -1,0 +1,2 @@
+[![Automated E2E Testing](https://github.com/DanielEkerhovd/social-media-client/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/DanielEkerhovd/social-media-client/actions/workflows/e2e-testing.yml)
+[![Automated Unit Testing](https://github.com/DanielEkerhovd/social-media-client/actions/workflows/unit-testing.yml/badge.svg)](https://github.com/DanielEkerhovd/social-media-client/actions/workflows/unit-testing.yml)
